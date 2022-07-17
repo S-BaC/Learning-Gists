@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\MybooksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/library', [LibraryController::class, 'index']);
+
+Route::get('/library/{id}', [LibraryController::class, 'show']);
+
+Route::get('/mybooks', [MybooksController::class, 'index']);

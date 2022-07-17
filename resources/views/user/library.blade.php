@@ -40,9 +40,9 @@
                                 <i class="fa fa-star" title="Edit" style="color:orange;"></i> 
                                 <small class="text-muted">{{$books[$i]->rating}}/5({{$books[$i]->borrow_count}})</small>
                             </p>
-                            <p class="fs-6">{{$books[$i]->description}}</p>
-                            <button class="btn btn-success">Borrow</button>
-                            <button class="btn btn-outline-success">Details</button>
+                            <p class="fs-6">{{$books[$i]->short_des}}</p>
+                            <a class="btn btn-success" href="/library/borrow/{{$books[$i]->id}}">Borrow</a>
+                            <a class="btn btn-outline-success" href="/library/{{$books[$i]->id}}">Details</a>
                         </div>
                     </div>
                     </div>
