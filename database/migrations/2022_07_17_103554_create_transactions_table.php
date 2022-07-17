@@ -18,7 +18,8 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('book_id');
             $table->date('borrowed_at');
-            $table->date('returned_at');
+            $table->date('to_be_returned_at');
+            $table->date('returned_at')->nullable();
             $table->timestamps();
         });
     }

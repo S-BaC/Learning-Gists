@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Books;
 use App\Models\Reviews;
+use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
+use \DateTime;
 
 class LibraryController extends Controller
 {
@@ -39,5 +41,29 @@ class LibraryController extends Controller
             'cur_com' => false,
             'cur_pro' => false
         ]);
+    }
+
+    public function borrow ($id) {
+        
+        request('name');
+
+        $transaction = new Transactions();
+
+        $year = date("Y");
+        $month = date("m");
+        $day = date("d") + 10;
+    
+        $returnDate = new DateTime("$year-$month-$day");
+
+        $transaction->user_id = '1';
+        $transaction->book_id = $id;
+        $transaction->borrowed_at = date('Y-m-d');
+        $transaction->to_be_returned_at = $returnDate->format('Y-m-d');
+
+        $transaction->save();
+
+        // error_log($person);
+
+        return redirect('/library', with('message', 'Successfully Borrowed.'));
     }
 }

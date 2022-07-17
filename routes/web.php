@@ -16,11 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.home');
+    return view('user.home', [
+        'cur_lib' => false,
+        'cur_myb' => false,
+        'cur_com' => false,
+        'cur_pro' => false
+    ]);
 });
 
 Route::get('/library', [LibraryController::class, 'index']);
 
 Route::get('/library/{id}', [LibraryController::class, 'show']);
+
+Route::get('/library/borrow/{id}', [LibraryController::class, 'borrow']);
 
 Route::get('/mybooks', [MybooksController::class, 'index']);

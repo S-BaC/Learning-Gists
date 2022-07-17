@@ -17,11 +17,11 @@
           @endif
           @if($cur_myb === true)
             <li class="nav-item">
-              <a class="nav-link active" href="#">My Books</a>
+              <a class="nav-link active" href="/mybooks">My Books</a>
             </li>
           @else
             <li class="nav-item">
-              <a class="nav-link" href="#">My Books</a>
+              <a class="nav-link" href="/mybooks">My Books</a>
             </li>
           @endif
           @if($cur_com === true)

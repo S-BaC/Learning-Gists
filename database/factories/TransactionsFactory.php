@@ -15,12 +15,17 @@ class TransactionsFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition()
+    
     {
+        $returned = $this->faker->date('Y-m-d', 'now');
+        $borrowed = $this->faker->date('Y-m-d', $returned);
+
         return [
             'user_id' => $this->faker->numberBetween(1,5),
             'book_id' => $this->faker->numberBetween(1,10),
-            'borrowed_at' => $this->faker->date('Y-m-d', 'now'),
-            'returned_at' => $this->faker->date('Y-m-d')
+            'borrowed_at' => $borrowed,
+            'to_be_returned_at' => $borrowed,
+            'returned_at' => $returned,
         ];
     }
 }
