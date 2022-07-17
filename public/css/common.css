@@ -32,5 +32,41 @@
     object-fit: cover;
   } */
 
+  /* .pagination nav span{
+    background-color: cyan !important;
+    color:cyan !important;
+    display: flex !important;
+    flex-direction: column !important;
+  } */
 
+  .pagination nav div div:last-child{
+    display: none;
+  }
 
+  .pagination nav {
+    width:100vw;
+    margin: 3vmin 0;
+    display: flex;
+    flex-direction: column;
+    gap:3vmin;
+    justify-content: center;
+    align-items: center;
+    color:#555;
+  }
+
+  .pagination a {
+    text-decoration: none !important;
+  }
+
+  .book-flex {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+  }
+
+  .book-flex>div {
+    max-width: 600px;
+    margin:0;
+    padding:0;
+  }

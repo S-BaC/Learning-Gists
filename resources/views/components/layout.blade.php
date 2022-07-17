@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="{{asset('css/common.css')}}" type="text/css"> 
 </head>
 <body>
+
+    <x-message/>
+
     {{$slot}}
     
 </body>

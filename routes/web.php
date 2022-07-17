@@ -31,3 +31,5 @@ Route::get('/library/{id}', [LibraryController::class, 'show']);
 Route::get('/library/borrow/{id}', [LibraryController::class, 'borrow']);
 
 Route::get('/mybooks', [MybooksController::class, 'index']);
+
+Route::get('/mybooks/return/{id}', [MybooksController::class, 'returnBook']);

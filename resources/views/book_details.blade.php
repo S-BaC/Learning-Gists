@@ -17,7 +17,9 @@
                         <small class="text-muted">{{$book->rating}}/5({{$book->borrow_count}})</small>
                     </p>
                     <p class="fs-6">{{$book->long_des}}</p>
-                    <a class="btn btn-success" href="/library/borrow/{{$book->id}}">Borrow</a>
+                    @if($book->is_available === 1)
+                        <a class="btn btn-success" href="/library/borrow/{{$book->id}}">Borrow</a>
+                    @endif
                     <a class="btn btn-outline-success" href="/library">Back</a>
                 </div>
             </div>

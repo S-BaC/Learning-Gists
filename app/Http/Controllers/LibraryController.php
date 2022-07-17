@@ -13,7 +13,7 @@ class LibraryController extends Controller
 {
     public function index () {
 
-        $books = Books::get();
+        $books = Books::orderBy('is_available', 'desc')->paginate(6);
 
         return view('user.library', [
             'books' => $books,
@@ -45,8 +45,6 @@ class LibraryController extends Controller
 
     public function borrow ($id) {
         
-        request('name');
-
         $transaction = new Transactions();
 
         $year = date("Y");
@@ -62,8 +60,8 @@ class LibraryController extends Controller
 
         $transaction->save();
 
-        // error_log($person);
+        Books::where('id', $id)->update(['is_available' => false]);
 
-        return redirect('/library', with('message', 'Successfully Borrowed.'));
+        return redirect('/library')->with('message', 'Successfully Borrowed');
     }
 }
