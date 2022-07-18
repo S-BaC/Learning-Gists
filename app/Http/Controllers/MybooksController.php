@@ -11,7 +11,7 @@ use Psy\Readline\Transient;
 class MybooksController extends Controller
 {
     public function index () {
-        $id = 1;
+        $id = auth()->user()->id;
 
         // $borrowedBooks = Transactions::where([['user_id', $id]
         // ,['returned_at', NULL]])->paginate(5); You can also do this.

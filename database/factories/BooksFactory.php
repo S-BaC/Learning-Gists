@@ -25,7 +25,7 @@ class BooksFactory extends Factory
             'rating' => $this->faker->numberBetween(1, 5),
             'number' => $this->faker->numberBetween(1,50),
             'borrow_count' => $this->faker->numberBetween(0,100),
-            'is_available' => $this->faker->boolean(),
+            'is_available' => true,
         ];
     }
 }

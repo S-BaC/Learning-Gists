@@ -53,7 +53,7 @@ class LibraryController extends Controller
     
         $returnDate = new DateTime("$year-$month-$day");
 
-        $transaction->user_id = '1';
+        $transaction->user_id = auth()->user()->id;
         $transaction->book_id = $id;
         $transaction->borrowed_at = date('Y-m-d');
         $transaction->to_be_returned_at = $returnDate->format('Y-m-d');
